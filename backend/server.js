@@ -1,6 +1,5 @@
 const express = require("express");
 const cors = require("cors");
-const bodyParser = require("body-parser");
 const admin = require("firebase-admin");
 
 // 🔥 FIREBASE INIT
@@ -13,38 +12,61 @@ admin.initializeApp({
 const db = admin.firestore();
 
 const app = express();
-app.use(cors({
-  origin: "*"
-}));
-app.use(bodyParser.json());
 
+// 🔥 MIDDLEWARE
+app.use(cors({ origin: "*" }));
+app.use(express.json()); // better than bodyParser
+
+// 🔥 TEST ROUTE
 app.get("/", (req, res) => {
   res.send("Backend is running 🚀");
 });
 
+
 /* =====================================================
-   ✅ 1. REGISTER USER (QR + TXN SYSTEM)
+   ✅ 1. REGISTER USER (WHATSAPP + TXN)
 ===================================================== */
 app.post("/register-user", async (req, res) => {
   try {
     const data = req.body;
 
-    // 🔥 BASIC VALIDATION
+    // 🔥 VALIDATION
     if (!data.email || !data.name || !data.txnId) {
-      return res.status(400).send("Missing required fields");
+      return res.status(400).json({
+        success: false,
+        message: "Missing required fields"
+      });
     }
 
+    // 🔥 SAVE USER
     await db.collection("users").doc(data.email).set({
-      ...data,
-      paymentStatus: "pending",     // 🔴 pending → approved later
+      name: data.name,
+      email: data.email,
+      phone: data.phone || "",
+      whatsapp: data.whatsapp || "",
+      rollNo: data.rollNo || "",
+      branch: data.branch || "",
+      year: data.year || "",
+      college: data.college || "",
+      txnId: data.txnId,
+
+      paymentStatus: "pending", // pending → approved manually
       ticketGenerated: false,
+
       createdAt: new Date()
     });
 
-    res.send("User registered successfully");
+    res.json({
+      success: true,
+      message: "Registration successful"
+    });
+
   } catch (error) {
     console.error(error);
-    res.status(500).send("Error saving user");
+    res.status(500).json({
+      success: false,
+      message: "Error saving user"
+    });
   }
 });
 
@@ -70,13 +92,11 @@ app.get("/users", async (req, res) => {
 
 
 /* =====================================================
-   🔍 3. GET SINGLE USER (FOR TICKET PAGE)
+   🔍 3. GET SINGLE USER (FOR TICKET)
 ===================================================== */
 app.get("/user/:email", async (req, res) => {
   try {
-    const email = req.params.email;
-
-    const doc = await db.collection("users").doc(email).get();
+    const doc = await db.collection("users").doc(req.params.email).get();
 
     if (!doc.exists) {
       return res.status(404).send("User not found");
@@ -84,35 +104,36 @@ app.get("/user/:email", async (req, res) => {
 
     res.json(doc.data());
   } catch (error) {
-    console.error(error);
     res.status(500).send("Error fetching user");
   }
 });
 
 
 /* =====================================================
-   ✅ 4. APPROVE USER (ADMIN ACTION)
+   ✅ 4. APPROVE USER
 ===================================================== */
 app.post("/approve-user", async (req, res) => {
   try {
     const { email } = req.body;
 
+    const ticketId = "TICKET_" + Date.now();
+
     await db.collection("users").doc(email).update({
       paymentStatus: "approved",
       ticketGenerated: true,
+      ticketId,
       approvedAt: new Date()
     });
 
     res.send("User approved");
   } catch (error) {
-    console.error(error);
     res.status(500).send("Error approving user");
   }
 });
 
 
 /* =====================================================
-   ❌ 5. REJECT USER (OPTIONAL)
+   ❌ 5. REJECT USER
 ===================================================== */
 app.post("/reject-user", async (req, res) => {
   try {
@@ -124,20 +145,17 @@ app.post("/reject-user", async (req, res) => {
 
     res.send("User rejected");
   } catch (error) {
-    console.error(error);
     res.status(500).send("Error rejecting user");
   }
 });
 
 
 /* =====================================================
-   🎟️ 6. CHECK TICKET STATUS
+   🎟️ 6. CHECK TICKET
 ===================================================== */
 app.get("/ticket/:email", async (req, res) => {
   try {
-    const email = req.params.email;
-
-    const doc = await db.collection("users").doc(email).get();
+    const doc = await db.collection("users").doc(req.params.email).get();
 
     if (!doc.exists) {
       return res.status(404).send("User not found");
@@ -151,7 +169,6 @@ app.get("/ticket/:email", async (req, res) => {
 
     res.json(user);
   } catch (error) {
-    console.error(error);
     res.status(500).send("Error fetching ticket");
   }
 });
@@ -160,6 +177,8 @@ app.get("/ticket/:email", async (req, res) => {
 /* =====================================================
    🚀 START SERVER
 ===================================================== */
-app.listen(5000, () => {
-  console.log("🚀 Server running on port 5000");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on port ${PORT}`);
 });

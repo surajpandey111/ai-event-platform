@@ -1,11 +1,29 @@
 import React, { useEffect, useState } from "react";
 
 const Admin = () => {
-  const [users, setUsers] = useState([]);
 
-  // 🔥 FETCH USERS
+  // 🔐 SIMPLE PASSWORD PROTECTION
+  const [authorized, setAuthorized] = useState(false);
+
+  useEffect(() => {
+    const pass = prompt("Enter Admin Password:");
+
+    if (pass === "Suraj@24112003##") {
+      setAuthorized(true);
+    } else {
+      setAuthorized(false);
+    }
+  }, []);
+
+  if (!authorized) {
+    return <h2 style={{ textAlign: "center" }}>❌ Unauthorized Access</h2>;
+  }
+
+  const [users, setUsers] = useState([]);
+  const API = "https://ai-event-platform.onrender.com";
+
   const fetchUsers = async () => {
-    const res = await fetch("https://ai-event-platform.onrender.com/users");
+    const res = await fetch(`${API}/admin/users`);
     const data = await res.json();
     setUsers(data);
   };
@@ -14,9 +32,8 @@ const Admin = () => {
     fetchUsers();
   }, []);
 
-  // ✅ APPROVE USER
   const approveUser = async (email) => {
-    await fetch("https://ai-event-platform.onrender.com/approve-user", {
+    await fetch(`${API}/admin/approve`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -24,12 +41,11 @@ const Admin = () => {
       body: JSON.stringify({ email })
     });
 
-    fetchUsers(); // refresh
+    fetchUsers();
   };
 
-  // ❌ REJECT USER
   const rejectUser = async (email) => {
-    await fetch("https://ai-event-platform.onrender.com/reject-user", {
+    await fetch(`${API}/admin/reject`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -62,21 +78,34 @@ const Admin = () => {
               <td>{user.name}</td>
               <td>{user.email}</td>
               <td>{user.college}</td>
-              <td>{user.txnId}</td>
+              <td>{user.txnId || "N/A"}</td>
               <td>
-                {user.paymentStatus === "approved" ? "✅ Approved" :
-                 user.paymentStatus === "rejected" ? "❌ Rejected" :
-                 "⏳ Pending"}
+                {user.paymentStatus === "approved"
+                  ? "✅ Approved"
+                  : user.paymentStatus === "rejected"
+                  ? "❌ Rejected"
+                  : "⏳ Pending"}
               </td>
 
               <td>
-                <button onClick={() => approveUser(user.email)}>
-                  ✅ Approve
-                </button>
+                {user.paymentStatus === "pending" && (
+                  <>
+                    <button onClick={() => approveUser(user.email)}>
+                      ✅ Approve
+                    </button>
 
-                <button onClick={() => rejectUser(user.email)} style={{ marginLeft: "10px" }}>
-                  ❌ Reject
-                </button>
+                    <button
+                      onClick={() => rejectUser(user.email)}
+                      style={{ marginLeft: "10px" }}
+                    >
+                      ❌ Reject
+                    </button>
+                  </>
+                )}
+
+                {user.paymentStatus === "approved" && (
+                  <p>🎟 {user.ticketId}</p>
+                )}
               </td>
             </tr>
           ))}
