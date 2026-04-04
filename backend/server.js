@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const admin = require("firebase-admin");
 
 // 🔥 FIREBASE INIT
-const serviceAccount = require("./serviceAccountKey.json");
+const serviceAccount = JSON.parse(process.env.FIREBASE_KEY);
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
