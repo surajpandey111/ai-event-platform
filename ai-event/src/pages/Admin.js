@@ -1,39 +1,42 @@
 import React, { useEffect, useState } from "react";
 
 const Admin = () => {
-
-  // 🔐 SIMPLE PASSWORD PROTECTION
   const [authorized, setAuthorized] = useState(false);
+  const [checked, setChecked] = useState(false);
+  const [users, setUsers] = useState([]);
 
+  const API = "https://ai-event-platform.onrender.com";
+
+  // 🔐 PASSWORD CHECK
   useEffect(() => {
     const pass = prompt("Enter Admin Password:");
 
     if (pass === "Suraj@24112003##") {
       setAuthorized(true);
-    } else {
-      setAuthorized(false);
     }
+
+    setChecked(true); // mark check done
   }, []);
 
-  if (!authorized) {
-    return <h2 style={{ textAlign: "center" }}>❌ Unauthorized Access</h2>;
-  }
-
-  const [users, setUsers] = useState([]);
-  const API = "https://ai-event-platform.onrender.com";
-
+  // 🔥 FETCH USERS
   const fetchUsers = async () => {
-    const res = await fetch(`${API}/admin/users`);
-    const data = await res.json();
-    setUsers(data);
+    try {
+      const res = await fetch(`${API}/users`);
+      const data = await res.json();
+      setUsers(data);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   useEffect(() => {
-    fetchUsers();
-  }, []);
+    if (authorized) {
+      fetchUsers();
+    }
+  }, [authorized]);
 
   const approveUser = async (email) => {
-    await fetch(`${API}/admin/approve`, {
+    await fetch(`${API}/approve-user`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -45,7 +48,7 @@ const Admin = () => {
   };
 
   const rejectUser = async (email) => {
-    await fetch(`${API}/admin/reject`, {
+    await fetch(`${API}/reject-user`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -55,6 +58,16 @@ const Admin = () => {
 
     fetchUsers();
   };
+
+  // ⏳ WAIT UNTIL PASSWORD CHECK
+  if (!checked) {
+    return <h2 style={{ textAlign: "center" }}>Loading...</h2>;
+  }
+
+  // ❌ NOT AUTHORIZED
+  if (!authorized) {
+    return <h2 style={{ textAlign: "center" }}>❌ Unauthorized Access</h2>;
+  }
 
   return (
     <div style={{ padding: "30px" }}>
