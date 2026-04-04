@@ -5,7 +5,7 @@ const Admin = () => {
 
   // 🔥 FETCH USERS
   const fetchUsers = async () => {
-    const res = await fetch("https://ai-event-backend.onrender.com/users");
+    const res = await fetch("https://ai-event-platform.onrender.com/users");
     const data = await res.json();
     setUsers(data);
   };
@@ -16,7 +16,7 @@ const Admin = () => {
 
   // ✅ APPROVE USER
   const approveUser = async (email) => {
-    await fetch("https://ai-event-backend.onrender.com/approve-user", {
+    await fetch("https://ai-event-platform.onrender.com/approve-user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -29,7 +29,7 @@ const Admin = () => {
 
   // ❌ REJECT USER
   const rejectUser = async (email) => {
-    await fetch("https://ai-event-backend.onrender.com/reject-user", {
+    await fetch("https://ai-event-platform.onrender.com/reject-user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

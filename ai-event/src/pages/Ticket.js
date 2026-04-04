@@ -7,7 +7,7 @@ const Ticket = () => {
 
   const fetchTicket = async () => {
     try {
-      const res = await fetch(`https://ai-event-backend.onrender.com/ticket/${email}`);
+      const res = await fetch(`https://ai-event-platform.onrender.com/ticket/${email}`);
 
       if (!res.ok) {
         setError("❌ Not approved or invalid email");

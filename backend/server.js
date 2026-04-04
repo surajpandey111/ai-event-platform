@@ -13,8 +13,14 @@ admin.initializeApp({
 const db = admin.firestore();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "*"
+}));
 app.use(bodyParser.json());
+
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
 
 /* =====================================================
    ✅ 1. REGISTER USER (QR + TXN SYSTEM)
