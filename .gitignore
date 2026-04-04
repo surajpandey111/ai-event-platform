@@ -1,0 +1,23 @@
+# Node
+node_modules/
+
+# Build
+build/
+
+# Env
+.env
+
+# OS files
+.DS_Store
+
+# Logs
+npm-debug.log
+
+# Firebase (VERY IMPORTANT)
+backend/serviceAccountKey.json
+backend/serviceAccountKey.json.json
+backend/serviceAccountKey.json
+backend/serviceAccountKey.json
+backend/serviceAccountKey.json.json
+node_modules
+build
