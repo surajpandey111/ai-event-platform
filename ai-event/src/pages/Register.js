@@ -19,7 +19,7 @@ const Register = () => {
 
   const handleSubmit = async () => {
     try {
-      await fetch("http://localhost:5000/register-user", {
+      await fetch("https://ai-event-backend.onrender.com/register-user", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
