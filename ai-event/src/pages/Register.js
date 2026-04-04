@@ -57,7 +57,7 @@ const Register = () => {
       <input name="college" placeholder="College" onChange={handleChange} /><br /><br />
 
       {/* 🔥 PAYMENT */}
-      <h3>💳 Pay via UPI</h3>
+      <h3>💳 Only ₹59 Pay via UPI</h3>
 
       <img
         src="/upi-qr.png"
