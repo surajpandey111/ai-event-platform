@@ -98,9 +98,9 @@ const Home = () => {
       {/* 🔥 PRIZES */}
       <h2>🏆 Prizes & Certification</h2>
       <ul style={{ textAlign: "left" }}>
-        <li>🥇 1st Prize – ₹999</li>
-        <li>🥈 2nd Prize – ₹699</li>
-        <li>🥉 3rd Prize – ₹399</li>
+        <li>🥇 1st Prize – Not Disclosed</li>
+        <li>🥈 2nd Prize – Not Disclosed</li>
+        <li>🥉 3rd Prize – Not Disclosed</li>
         <li>🎖 Quiz Winners & Special Recognition</li>
         <li>📜 Certificate for All Participants</li>
       </ul>
