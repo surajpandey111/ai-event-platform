@@ -115,7 +115,7 @@ const Home = () => {
       </p>
       
       <p>
-      Suraj Kumar Pandey & Final Year Students <strong>ORGANISER:</strong> <br /> <br />
+      Suraj Kumar Pandey & Final Year Students <strong>(ORGANISER)</strong> <br /> <br />
      </p>
 
 
