@@ -130,7 +130,7 @@ const Home = () => {
       <h4>👨‍🎓 Student Coordinators</h4>
 
       <p>
-        Anand Chaudhary (Management) <br />
+        Anand Chaudhary (Management Head) <br />
         📞 8601499399 <br />
         📧 anandchaudhary3364@gmail.com
       </p>
