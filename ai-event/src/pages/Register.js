@@ -10,32 +10,81 @@ const Register = () => {
     branch: "",
     year: "",
     college: "",
-    txnId: "",
-    screenshot: null
+    txnId: ""
   });
+
+  const [whatsappClicked, setWhatsappClicked] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleFileChange = (e) => {
-    setFormData({ ...formData, screenshot: e.target.files[0] });
+  // ✅ VALIDATION FUNCTION
+  const validateForm = () => {
+    const {
+      name,
+      email,
+      phone,
+      whatsapp,
+      rollNo,
+      branch,
+      year,
+      college,
+      txnId
+    } = formData;
+
+    if (
+      !name ||
+      !email ||
+      !phone ||
+      !whatsapp ||
+      !rollNo ||
+      !branch ||
+      !year ||
+      !college ||
+      !txnId
+    ) {
+      alert("⚠️ Please fill all fields");
+      return false;
+    }
+
+    if (!whatsappClicked) {
+      alert("⚠️ Please send screenshot on WhatsApp before submitting");
+      return false;
+    }
+
+    return true;
   };
 
+  // ✅ SUBMIT
   const handleSubmit = async () => {
+    if (!validateForm()) return;
+
     try {
-      const data = new FormData();
-
-      Object.keys(formData).forEach((key) => {
-        data.append(key, formData[key]);
-      });
-
       await fetch("https://ai-event-platform.onrender.com/register-user", {
         method: "POST",
-        body: data
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
       });
 
       alert("✅ Registration submitted! Wait for approval.");
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        whatsapp: "",
+        rollNo: "",
+        branch: "",
+        year: "",
+        college: "",
+        txnId: ""
+      });
+
+      setWhatsappClicked(false);
 
     } catch (error) {
       console.error(error);
@@ -44,17 +93,24 @@ const Register = () => {
   };
 
   return (
-    <div style={{ padding: "40px", textAlign: "center", maxWidth: "600px", margin: "auto" }}>
+    <div
+      style={{
+        padding: "40px",
+        textAlign: "center",
+        maxWidth: "600px",
+        margin: "auto"
+      }}
+    >
       <h2>🚀 AI/ML Workshop & Hackathon 2026</h2>
 
-      <input name="name" placeholder="Full Name" onChange={handleChange} /><br /><br />
-      <input name="email" placeholder="Email" onChange={handleChange} /><br /><br />
-      <input name="phone" placeholder="Phone Number" onChange={handleChange} /><br /><br />
-      <input name="whatsapp" placeholder="WhatsApp Number" onChange={handleChange} /><br /><br />
-      <input name="rollNo" placeholder="Roll No" onChange={handleChange} /><br /><br />
-      <input name="branch" placeholder="Branch" onChange={handleChange} /><br /><br />
-      <input name="year" placeholder="Year" onChange={handleChange} /><br /><br />
-      <input name="college" placeholder="College" onChange={handleChange} /><br /><br />
+      <input name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} /><br /><br />
+      <input name="email" placeholder="Email" value={formData.email} onChange={handleChange} /><br /><br />
+      <input name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} /><br /><br />
+      <input name="whatsapp" placeholder="WhatsApp Number" value={formData.whatsapp} onChange={handleChange} /><br /><br />
+      <input name="rollNo" placeholder="Roll No" value={formData.rollNo} onChange={handleChange} /><br /><br />
+      <input name="branch" placeholder="Branch" value={formData.branch} onChange={handleChange} /><br /><br />
+      <input name="year" placeholder="Year" value={formData.year} onChange={handleChange} /><br /><br />
+      <input name="college" placeholder="College" value={formData.college} onChange={handleChange} /><br /><br />
 
       {/* 🔥 PAYMENT */}
       <h3>💳 Only ₹59 Pay via UPI</h3>
@@ -70,44 +126,39 @@ const Register = () => {
       <input
         name="txnId"
         placeholder="Enter UPI Transaction ID"
+        value={formData.txnId}
         onChange={handleChange}
-      /><br /><br />
-
-      {/* 🔥 SCREENSHOT UPLOAD */}
-      <p><b>Upload Payment Screenshot (Optional but recommended)</b></p>
-
-      <input
-        type="file"
-        accept="image/*"
-        onChange={handleFileChange}
       /><br /><br />
 
       {/* 🔥 WHATSAPP VERIFICATION */}
       <p style={{ color: "red", fontWeight: "bold" }}>
-        ⚠️ Send screenshot on WhatsApp for faster approval
+        ⚠️ Mandatory: Send payment screenshot on WhatsApp before submitting
       </p>
 
       <a
         href={`https://wa.me/917488723028?text=Hello%20I%20have%20paid%20for%20AI%20Workshop.%20Txn%20ID:%20${formData.txnId}`}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => setWhatsappClicked(true)}
       >
-        <button style={{
-          background: "#25D366",
-          color: "#fff",
-          padding: "10px 20px",
-          border: "none",
-          borderRadius: "8px",
-          cursor: "pointer",
-          marginBottom: "20px"
-        }}>
+        <button
+          style={{
+            background: "#25D366",
+            color: "#fff",
+            padding: "10px 20px",
+            border: "none",
+            borderRadius: "8px",
+            cursor: "pointer",
+            marginBottom: "20px"
+          }}
+        >
           📩 Send Screenshot on WhatsApp
         </button>
       </a>
 
-      {/* 🔥 SUBMIT */}
       <br />
 
+      {/* 🔥 SUBMIT */}
       <button
         onClick={handleSubmit}
         style={{
