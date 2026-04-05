@@ -114,10 +114,6 @@ const Home = () => {
         🌐 Website: <a href="https://suraj-portfolio.tech" target="_blank" rel="noreferrer">suraj-portfolio.tech</a>
       </p>
       
-      <p>
-      Suraj Kumar Pandey & Final Year Students <strong>(ORGANISER)</strong> <br /> <br />
-     </p>
-
 
       <p>
         📧 Email: worldforensic@gmail.com
