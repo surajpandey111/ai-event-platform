@@ -98,9 +98,9 @@ const Home = () => {
       {/* 🔥 PRIZES */}
       <h2>🏆 Prizes & Certification</h2>
       <ul style={{ textAlign: "left" }}>
-        <li>🥇 1st Prize – Not Disclosed</li>
-        <li>🥈 2nd Prize – Not Disclosed</li>
-        <li>🥉 3rd Prize – Not Disclosed</li>
+        <li>🥇 1st Prize – Not Disclosed (Cash Prize)</li>
+        <li>🥈 2nd Prize – Not Disclosed (Cash Prize)</li>
+        <li>🥉 3rd Prize – Not Disclosed (Cash Prize)</li>
         <li>🎖 Quiz Winners & Special Recognition</li>
         <li>📜 Certificate for All Participants</li>
       </ul>
@@ -113,6 +113,11 @@ const Home = () => {
       <p>
         🌐 Website: <a href="https://suraj-portfolio.tech" target="_blank" rel="noreferrer">suraj-portfolio.tech</a>
       </p>
+      
+      <p>
+      Suraj Kumar Pandey & Final Year Students <strong>ORGANISER:</strong> <br /> <br />
+     </p>
+
 
       <p>
         📧 Email: worldforensic@gmail.com
@@ -125,7 +130,7 @@ const Home = () => {
       <h4>👨‍🎓 Student Coordinators</h4>
 
       <p>
-        Anand Chaudhary <br />
+        Anand Chaudhary (Management) <br />
         📞 8601499399 <br />
         📧 anandchaudhary3364@gmail.com
       </p>
