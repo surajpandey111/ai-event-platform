@@ -92,22 +92,49 @@ const Home = () => {
 
       <hr />
 
-{/* 🔥 EVENT LEADERSHIP */}
-<h2>🏛️ Event Leadership & Coordination</h2>
+{/* 🔥 ORGANIZING TEAM */}
+<h2 style={{ textAlign: "center" }}>🏛️ Event Leadership & Coordination</h2>
 
-<div style={{ textAlign: "left", marginTop: "10px" }}>
+<div style={{
+  textAlign: "center",
+  marginTop: "20px",
+  lineHeight: "1.8"
+}}>
 
-  <p><b>Chief Patron:</b> Director Sir</p>
+  <p>
+    <span style={{ color: "#1a3c8b", fontWeight: "bold" }}>Chief Patron</span><br />
+    <b>Prof. B.K. Tripathi</b><br />
+    <span>Director, REC Azamgarh</span>
+  </p>
 
-  <p><b>Patron:</b> Dr. Ashok Kumar Yadav (Dean)</p>
+  <p>
+    <span style={{ color: "#1a3c8b", fontWeight: "bold" }}>Patron</span><br />
+    <b>Dr. Ashok Kumar Yadav</b><br />
+    <span>Dean, REC Azamgarh</span>
+  </p>
 
-  <p><b>Program Convener:</b> Dr. Kausal Kumar Shukla</p>
+  <p>
+    <span style={{ color: "#1a3c8b", fontWeight: "bold" }}>Program Convener</span><br />
+    <b>Dr. Kausal Kumar Shukla</b><br />
+    <span>Director, PCIIF (Innovation Center), REC Azamgarh</span>
+  </p>
 
-  <p><b>Organizing Chair:</b> Dr. Ambrish Singh (Registrar)</p>
+  <p>
+    <span style={{ color: "#1a3c8b", fontWeight: "bold" }}>Organizing Chair</span><br />
+    <b>Dr. Ambrish Singh</b><br />
+    <span>Registrar, REC Azamgarh</span>
+  </p>
 
-  <p><b>Faculty Coordinators:</b> HOD IT & Faculty Members</p>
+  <p>
+    <span style={{ color: "#1a3c8b", fontWeight: "bold" }}>Faculty Coordinators</span><br />
+    <span>HOD IT & Faculty Members</span>
+  </p>
 
-  <p><b>Event Head:</b> Suraj Kumar Pandey</p>
+  <p>
+    <span style={{ color: "#1a3c8b", fontWeight: "bold" }}>Event Head</span><br />
+    <b>Suraj Kumar Pandey</b><br />
+    <span>Final Year, IT</span>
+  </p>
 
 </div>
 
