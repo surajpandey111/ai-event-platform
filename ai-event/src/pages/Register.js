@@ -115,6 +115,28 @@ const Register = () => {
       {/* 🔥 PAYMENT */}
       <h3>💳 Only ₹59 Pay via UPI</h3>
 
+      {/* ✅ NEW: UPI INSTANT BUTTON */}
+      <a href="upi://pay?pa=7488723028@ibl&pn=Suraj&am=59&cu=INR&tn=AIWorkshop">
+        <button
+          style={{
+            background: "#6f42c1",
+            color: "#fff",
+            padding: "12px 20px",
+            border: "none",
+            borderRadius: "10px",
+            cursor: "pointer",
+            marginBottom: "15px"
+          }}
+        >
+          💳 Pay ₹59 Instantly (Mobile)
+        </button>
+      </a>
+
+      <p style={{ color: "green" }}>
+        ✔ Mobile: Click button | Laptop: Scan QR
+      </p>
+
+      {/* 🔥 QR CODE */}
       <img
         src="/upi-qr.png"
         alt="UPI QR"
