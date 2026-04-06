@@ -92,12 +92,34 @@ const Home = () => {
 
       <hr />
 
-      {/* 🔥 FINAL CTA */}
-      <h2>🚀 Ready to Build Your First AI Project?</h2>
+      {/* 🔥 FINAL CTA (UPGRADED) */}
+<div style={{
+  marginTop: "40px",
+  padding: "25px",
+  background: "#f5f5f5",
+  borderRadius: "15px"
+}}>
 
-      <button onClick={() => navigate("/register")} style={btnBlue}>
-        Register Now
-      </button>
+  <h2>🚀 Ready to Build Your First AI Project?</h2>
+
+  <p style={{ fontSize: "16px", marginBottom: "20px" }}>
+    Join this 2-day hands-on <b>AI/ML Workshop + Buildathon</b> where you will
+    learn, build, compete, and showcase real-world AI models.
+  </p>
+
+  <button onClick={() => navigate("/register")} style={btnBlue}>
+    🚀 Register Now
+  </button>
+
+  <button onClick={() => navigate("/ticket")} style={btnGreen}>
+    🎟 Get Ticket
+  </button>
+
+  <p style={{ marginTop: "15px", fontSize: "14px", color: "#555" }}>
+    ⚡ Limited Seats • Hands-on Learning • Certificate Included
+  </p>
+
+</div>
 
     </div>
   );
