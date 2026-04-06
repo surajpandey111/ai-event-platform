@@ -130,6 +130,9 @@ const Home = () => {
     <span>HOD IT & Faculty Members</span>
   </p>
 
+<p style={{ textAlign: "center", color: "#555" }}>
+  Under the guidance of esteemed faculty and administration
+</p>
   <p>
     <span style={{ color: "#1a3c8b", fontWeight: "bold" }}>Event Head</span><br />
     <b>Suraj Kumar Pandey</b><br />
