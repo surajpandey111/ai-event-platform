@@ -92,6 +92,50 @@ const Home = () => {
 
       <hr />
 
+{/* 🔥 EVENT LEADERSHIP */}
+<h2>🏛️ Event Leadership & Coordination</h2>
+
+<div style={{ textAlign: "left", marginTop: "10px" }}>
+
+  <p><b>Chief Patron:</b> Director Sir</p>
+
+  <p><b>Patron:</b> Dr. Ashok Kumar Yadav (Dean)</p>
+
+  <p><b>Program Convener:</b> Dr. Kausal Kumar Shukla</p>
+
+  <p><b>Organizing Chair:</b> Dr. Ambrish Singh (Registrar)</p>
+
+  <p><b>Faculty Coordinators:</b> HOD IT & Faculty Members</p>
+
+  <p><b>Event Head:</b> Suraj Kumar Pandey</p>
+
+</div>
+
+<hr />
+{/* 🔥 CONTACT */}
+<h2>📞 Contact & Information</h2>
+
+<p>
+  🌐 Website: <a href="https://suraj-portfolio.tech" target="_blank" rel="noreferrer">
+    suraj-portfolio.tech
+  </a>
+</p>
+
+<p>📧 Email: worldforensic@gmail.com</p>
+<p>📱 Phone: 7488723028</p>
+
+<h4>👨‍🎓 Student Coordinators</h4>
+
+<p>
+  Anand Chaudhary (Management)<br />
+  📞 8601499399
+</p>
+
+<p>
+  Jitesh Siddhartha<br />
+  📞 9695296837
+</p>
+<hr />
       {/* 🔥 FINAL CTA (UPGRADED) */}
 <div style={{
   marginTop: "40px",
