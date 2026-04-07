@@ -62,24 +62,35 @@ const Home = () => {
         Semiconductor systems, Nanotechnology, and future innovations shaping AI and computing.
       </p>
       {/* 🔥 SPECIAL EXPERT INSIGHTS */}
-      <h2>🎓 Special Expert Insights</h2>
-      
-      <p style={{ textAlign: "left" }}>
-        Gain exclusive insights from <b>Prof. B.K. Tripathi (Director, REC Azamgarh)</b>,
-        an expert in <b>Machine Learning, Computer Vision, and High-Dimensional Neurocomputing</b>.
-      </p>
-      
-      <ul style={{ textAlign: "left" }}>
-        <li>Advanced Neural Networks & Computational Intelligence</li>
-        <li>High-Dimensional AI & Hybrid Computing Systems</li>
-        <li>Real-world Applications in Biometrics & Imaging</li>
-        <li>Innovation-driven insights inspired by IIT-level research</li>
-        <li>Strategic perspectives on AI, Technology & Economy (IIM-style insights)</li>
-      </ul>
-      
-      <p style={{ textAlign: "left" }}>
-        ⚡ Special sessions include <b>two-phase expert lectures</b> covering both foundational and advanced concepts.
-      </p>
+    <h2>🎓 Special Expert Insights</h2>
+    
+    <p style={{ textAlign: "left" }}>
+      Experience high-level expert sessions from distinguished faculty with backgrounds from
+      <b> IIT Delhi, IIT Kanpur, IIT BHU and IIM Ahmedabad</b>, bringing together AI, advanced computing,
+      and future technologies.
+    </p>
+    
+    <ul style={{ textAlign: "left" }}>
+      <li>
+        <b>Prof. B.K. Tripathi (Director)</b> – IIT Delhi, IIT Kanpur<br />
+        Computational Intelligence, Neural Networks, High-Dimensional Neurocomputing,
+        Biometrics, 2D/3D Imaging & Hybrid Computing
+      </li>
+    
+      <li>
+        <b>Dr. Kausal Kumar Shukla (Program Convener)</b> – IIT BHU<br />
+        Insights on Nanotechnology, Semiconductor Systems & Superconductor Concepts
+      </li>
+    
+      <li>
+        <b>Dr. Ambrish Singh (Registrar)</b> – IIM Ahmedabad<br />
+        AI/ML Impact on Economy, Innovation & Technology-driven Growth
+      </li>
+    </ul>
+    
+    <p style={{ textAlign: "left" }}>
+      ⚡ Special sessions include <b>two-phase expert lectures</b> covering both foundational concepts and advanced research insights.
+    </p>
       {/* 🔥 TRACKS */}
       <h2> Innovation Tracks</h2>
       <ul style={{ textAlign: "left" }}>
