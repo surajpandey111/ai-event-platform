@@ -90,57 +90,6 @@ const Home = () => {
         <li>📜 Certificate for All</li>
       </ul>
 
-      <hr />
-
-{/* 🔥 ORGANIZING TEAM */}
-<h2 style={{ textAlign: "center" }}>🏛️ Event Leadership & Coordination</h2>
-
-<div style={{
-  textAlign: "center",
-  marginTop: "20px",
-  lineHeight: "1.8"
-}}>
-
-  <p>
-    <span style={{ color: "#1a3c8b", fontWeight: "bold" }}>Chief Patron</span><br />
-    <b>Prof. B.K. Tripathi</b><br />
-    <span>Director, REC Azamgarh</span>
-  </p>
-
-  <p>
-    <span style={{ color: "#1a3c8b", fontWeight: "bold" }}>Patron</span><br />
-    <b>Dr. Ashok Kumar Yadav</b><br />
-    <span>Dean, REC Azamgarh</span>
-  </p>
-
-  <p>
-    <span style={{ color: "#1a3c8b", fontWeight: "bold" }}>Program Convener</span><br />
-    <b>Dr. Kausal Kumar Shukla</b><br />
-    <span>Director, PCIIF (Innovation Center), REC Azamgarh</span>
-  </p>
-
-  <p>
-    <span style={{ color: "#1a3c8b", fontWeight: "bold" }}>Organizing Chair</span><br />
-    <b>Dr. Ambrish Singh</b><br />
-    <span>Registrar, REC Azamgarh</span>
-  </p>
-
-  <p>
-    <span style={{ color: "#1a3c8b", fontWeight: "bold" }}>Faculty Coordinators</span><br />
-    <span>HOD IT & Faculty Members</span>
-  </p>
-
-<p style={{ textAlign: "center", color: "#555" }}>
-  Under the guidance of esteemed faculty and administration
-</p>
-  <p>
-    <span style={{ color: "#1a3c8b", fontWeight: "bold" }}>Event Head</span><br />
-    <b>Suraj Kumar Pandey</b><br />
-    <span>Final Year, IT</span>
-  </p>
-
-</div>
-
 <hr />
 {/* 🔥 CONTACT */}
 <h2>📞 Contact & Information</h2>
