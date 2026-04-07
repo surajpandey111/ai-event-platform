@@ -8,7 +8,7 @@ const Home = () => {
     <div style={{ padding: "30px", fontFamily: "Arial", textAlign: "center", maxWidth: "900px", margin: "auto" }}>
       
       {/* 🔥 HEADER */}
-      <h1>🚀 AI/ML Buildathon & Innovation Hackathon 2026</h1>
+      <h1> AI/ML Buildathon & Innovation Hackathon 2026</h1>
 
       <p style={{ fontSize: "18px" }}>
         Build Real AI Projects | Hackathon | Quiz | Model Showcase
@@ -27,7 +27,7 @@ const Home = () => {
       <hr />
 
       {/* 🔥 ABOUT */}
-      <h2>📌 About the Event</h2>
+      <h2> About the Event</h2>
       <p>
         This 2-day AI/ML Buildathon is focused on hands-on learning in Artificial Intelligence,
         Machine Learning, Python, and RAG-based systems. Participants will build real-world AI models,
@@ -35,7 +35,7 @@ const Home = () => {
       </p>
 
       {/* 🔥 LEARNING */}
-      <h2>🎯 What You Will Learn</h2>
+      <h2> What You Will Learn</h2>
       <ul style={{ textAlign: "left" }}>
         <li>Python for AI & ML</li>
         <li>Machine Learning Basics</li>
@@ -46,7 +46,7 @@ const Home = () => {
       </ul>
 
       {/* 🔥 HIGHLIGHTS */}
-      <h2>🔥 Event Highlights</h2>
+      <h2> Event Highlights</h2>
       <ul style={{ textAlign: "left" }}>
         <li>Hands-on AI/ML Buildathon</li>
         <li>Live Model Development</li>
@@ -56,14 +56,14 @@ const Home = () => {
       </ul>
 
       {/* 🔥 NEW (SMALL FUTURE TECH SECTION) */}
-      <h2>⚡ Future Technology Insights</h2>
+      <h2> Future Technology Insights</h2>
       <p style={{ textAlign: "left" }}>
         Short expert insights on emerging technologies such as Quantum Computing,
         Semiconductor systems, Nanotechnology, and future innovations shaping AI and computing.
       </p>
 
       {/* 🔥 TRACKS */}
-      <h2>🧠 Innovation Tracks</h2>
+      <h2> Innovation Tracks</h2>
       <ul style={{ textAlign: "left" }}>
         <li>AI for Social Impact</li>
         <li>Efficient AI Systems</li>
@@ -72,7 +72,7 @@ const Home = () => {
       </ul>
 
       {/* 🔥 OUTCOMES */}
-      <h2>🏁 Expected Outcomes</h2>
+      <h2> Expected Outcomes</h2>
       <ul style={{ textAlign: "left" }}>
         <li>Build functional AI prototypes</li>
         <li>Gain real-world experience</li>
@@ -81,14 +81,59 @@ const Home = () => {
       </ul>
 
       {/* 🔥 PRIZES */}
-      <h2>🏆 Prizes & Certification</h2>
+      <h2> Prizes & Certification</h2>
       <ul style={{ textAlign: "left" }}>
-        <li>🥇 1st Prize – Cash + Certificate</li>
-        <li>🥈 2nd Prize – Cash + Certificate</li>
-        <li>🥉 3rd Prize – Cash + Certificate</li>
-        <li>🎖 Quiz Winners</li>
-        <li>📜 Certificate for All</li>
+        <li> 1st Prize – Cash + Certificate</li>
+        <li> 2nd Prize – Cash + Certificate</li>
+        <li> 3rd Prize – Cash + Certificate</li>
+        <li> Quiz Winners</li>
+        <li> Certificate for All</li>
       </ul>
+
+<hr />
+{/* 🔥 ORGANIZING TEAM */}
+<h2 style={{ textAlign: "center" }}> Event Leadership & Coordination</h2>
+
+<div style={{
+  textAlign: "center",
+  marginTop: "20px",
+  lineHeight: "1.8"
+}}>
+
+  <p>
+    <span style={{ color: "#1a3c8b", fontWeight: "bold" }}>Chief Patron</span><br />
+    <b>Prof. B.K. Tripathi</b><br />
+    <span>Director, REC Azamgarh</span>
+  </p>
+
+
+  <p>
+    <span style={{ color: "#1a3c8b", fontWeight: "bold" }}>Program Convener</span><br />
+    <b>Dr. Kaushal Kumar Shukla</b><br />
+    <span>Director, PCIIF (Innovation Center), REC Azamgarh</span>
+  </p>
+
+  <p>
+    <span style={{ color: "#1a3c8b", fontWeight: "bold" }}>Organizing Chair</span><br />
+    <b>Dr. Ambrish Singh</b><br />
+    <span>Registrar, REC Azamgarh</span>
+  </p>
+
+  <p>
+    <span style={{ color: "#1a3c8b", fontWeight: "bold" }}>Faculty Coordinators</span><br />
+    <span>IT Faculty Members</span>
+  </p>
+
+<p style={{ textAlign: "center", color: "#555" }}>
+  Under the guidance of esteemed faculty and administration
+</p>
+  <p>
+    <span style={{ color: "#1a3c8b", fontWeight: "bold" }}>Event Head</span><br />
+    <b>Suraj Kumar Pandey</b><br />
+    <span>Final Year, IT</span>
+  </p>
+
+</div>
 
 <hr />
 {/* 🔥 CONTACT */}
@@ -103,7 +148,7 @@ const Home = () => {
 <p>📧 Email: worldforensic@gmail.com</p>
 <p>📱 Phone: 7488723028</p>
 
-<h4>👨‍🎓 Student Coordinators</h4>
+<h4> Student Coordinators</h4>
 
 <p>
   Anand Chaudhary (Management)<br />
@@ -123,7 +168,7 @@ const Home = () => {
   borderRadius: "15px"
 }}>
 
-  <h2>🚀 Ready to Build Your First AI Project?</h2>
+  <h2> Ready to Build Your First AI Project?</h2>
 
   <p style={{ fontSize: "16px", marginBottom: "20px" }}>
     Join this 2-day hands-on <b>AI/ML Workshop + Buildathon</b> where you will
@@ -131,7 +176,7 @@ const Home = () => {
   </p>
 
   <button onClick={() => navigate("/register")} style={btnBlue}>
-    🚀 Register Now
+     Register Now
   </button>
 
   <button onClick={() => navigate("/ticket")} style={btnGreen}>
