@@ -61,7 +61,25 @@ const Home = () => {
         Short expert insights on emerging technologies such as Quantum Computing,
         Semiconductor systems, Nanotechnology, and future innovations shaping AI and computing.
       </p>
-
+      {/* 🔥 SPECIAL EXPERT INSIGHTS */}
+      <h2>🎓 Special Expert Insights</h2>
+      
+      <p style={{ textAlign: "left" }}>
+        Gain exclusive insights from <b>Prof. B.K. Tripathi (Director, REC Azamgarh)</b>,
+        an expert in <b>Machine Learning, Computer Vision, and High-Dimensional Neurocomputing</b>.
+      </p>
+      
+      <ul style={{ textAlign: "left" }}>
+        <li>Advanced Neural Networks & Computational Intelligence</li>
+        <li>High-Dimensional AI & Hybrid Computing Systems</li>
+        <li>Real-world Applications in Biometrics & Imaging</li>
+        <li>Innovation-driven insights inspired by IIT-level research</li>
+        <li>Strategic perspectives on AI, Technology & Economy (IIM-style insights)</li>
+      </ul>
+      
+      <p style={{ textAlign: "left" }}>
+        ⚡ Special sessions include <b>two-phase expert lectures</b> covering both foundational and advanced concepts.
+      </p>
       {/* 🔥 TRACKS */}
       <h2> Innovation Tracks</h2>
       <ul style={{ textAlign: "left" }}>
