@@ -185,7 +185,7 @@ const Home = () => {
 </p>
 
 <p>
-  Gudhal chauhan (Management)<br />
+  Gudhal chauhan (Registration)<br />
   📞 7453879136
 </p>
 
