@@ -159,7 +159,7 @@ const Home = () => {
   <p>
     <span style={{ color: "#1a3c8b", fontWeight: "bold" }}>Event Head</span><br />
     <b>Suraj Kumar Pandey</b><br />
-    <span>Final Year, IT</span>
+    <span>Final Year,IT(AI Scientist & Researcher)</span>
   </p>
 
 </div>
