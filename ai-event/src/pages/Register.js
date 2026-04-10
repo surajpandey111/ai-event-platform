@@ -113,10 +113,10 @@ const Register = () => {
       <input name="college" placeholder="College" value={formData.college} onChange={handleChange} /><br /><br />
 
       {/* 🔥 PAYMENT */}
-      <h3>💳 Only ₹59 Pay via UPI</h3>
+      <h3>💳 Only ₹49 Pay via UPI</h3>
 
       {/* ✅ NEW: UPI INSTANT BUTTON */}
-      <a href="upi://pay?pa=7488723028@ibl&pn=Suraj&am=59&cu=INR&tn=AIWorkshop">
+      <a href="upi://pay?pa=7488723028@ibl&pn=Suraj&am=49&cu=INR&tn=AIWorkshop">
         <button
           style={{
             background: "#6f42c1",
@@ -128,7 +128,7 @@ const Register = () => {
             marginBottom: "15px"
           }}
         >
-          💳 Pay ₹59 Instantly (Mobile)
+          💳 Pay ₹49 Instantly (Mobile)
         </button>
       </a>
 
