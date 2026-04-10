@@ -112,9 +112,9 @@ const Home = () => {
       {/* 🔥 PRIZES */}
       <h2> Prizes & Certification</h2>
       <ul style={{ textAlign: "left" }}>
-        <li> 1st Prize – Cash + Certificate</li>
-        <li> 2nd Prize – Cash + Certificate</li>
-        <li> 3rd Prize – Cash + Certificate</li>
+        <li> 1st Prize – Trophy  + Certificate(special recognization)</li>
+        <li> 2nd Prize – Trophy  + Certificate(special recognization)</li>
+        <li> 3rd Prize – Trophy  + Certificate(special recognization)</li>
         <li> Quiz Winners</li>
         <li> Certificate for All</li>
       </ul>
