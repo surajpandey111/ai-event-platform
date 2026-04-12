@@ -163,57 +163,7 @@ const Home = () => {
   </p>
 
 </div>
-<hr />
 
-{/* 🔥 LEAD INSTRUCTOR */}
-<h2 style={{ textAlign: "center" }}>🧑‍💻 Lead Instructor (Technical Sessions)</h2>
-
-<div style={{
-  textAlign: "center",
-  marginTop: "20px",
-  lineHeight: "1.8",
-  maxWidth: "800px",
-  marginInline: "auto"
-}}>
-
-  <p>
-    <b style={{ fontSize: "20px" }}>Suraj Kumar Pandey</b><br />
-    <span>AI/ML Engineer • IIT Madras (DS/ML) • RAG & LLM Systems • Founder (SurajTechLabs)</span>
-  </p>
-
-  <p style={{ marginTop: "10px" }}>
-  The hands-on technical sessions and AI/ML training in this event will be conducted by 
-  <b> Suraj Kumar Pandey</b>, who will guide participants from fundamentals to building 
-  real-world AI systems including Machine Learning models, RAG pipelines, and automation tools.
-</p>
-
-  <h4 style={{ marginTop: "20px" }}>🚀 Key Experience & Exposure</h4>
-
-  <ul style={{ textAlign: "left" }}>
-    <li>🇩🇪 International AI Exposure – Berlin, Germany (AI Systems & Model Training)</li>
-    <li>🏭 Coal India Limited – Data/AI Analytics Intern (Govt. Sector)</li>
-    <li>🇮🇳 IndiaAI Hackathon – Mineral Targeting AI System</li>
-    <li>🧠 AI Strategy Work with Government-Level Projects</li>
-    <li>📊 NIELIT (Govt. of India) – Data Science & AI (Outstanding Grade)</li>
-    <li>🤖 Gyanm AI Hub – Full AI System Development (RAG + LLM)</li>
-    <li>🚀 Founder – SurajTechLabs (Independent AI Developer)</li>
-  </ul>
-
-  <h4 style={{ marginTop: "20px" }}>🛠 Core Expertise</h4>
-
-  <ul style={{ textAlign: "left" }}>
-    <li>Machine Learning & Deep Learning</li>
-    <li>Large Language Models (LLMs)</li>
-    <li>RAG Systems & AI Automation</li>
-    <li>Full-Stack AI Development</li>
-    <li>Real-world AI Product Development</li>
-  </ul>
-
-  <p style={{ marginTop: "15px", fontStyle: "italic" }}>
-    ⚡ Learn directly from someone building real AI systems, not just theory.
-  </p>
-
-</div>
 
 <hr />
 {/* 🔥 CONTACT */}
