@@ -178,7 +178,7 @@ const Home = () => {
 
   <p>
     <b style={{ fontSize: "20px" }}>Suraj Kumar Pandey</b><br />
-    <span>AI/ML Engineer • LLM Systems • RAG & Agentic AI Developer</span>
+    <span>AI/ML Engineer • IIT Madras (DS/ML) • RAG & LLM Systems • Founder (SurajTechLabs)</span>
   </p>
 
   <p style={{ marginTop: "10px" }}>
