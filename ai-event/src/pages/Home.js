@@ -166,7 +166,7 @@ const Home = () => {
 <hr />
 
 {/* 🔥 LEAD INSTRUCTOR */}
-<h2 style={{ textAlign: "center" }}>🧑‍💻 Lead Instructor & Event Head</h2>
+<h2 style={{ textAlign: "center" }}>🧑‍💻 Lead Instructor (Technical Sessions)</h2>
 
 <div style={{
   textAlign: "center",
@@ -182,11 +182,10 @@ const Home = () => {
   </p>
 
   <p style={{ marginTop: "10px" }}>
-    This entire AI/ML Buildathon is designed and led by <b>Suraj Kumar Pandey</b>,
-    where participants will be guided step-by-step from basic concepts to building
-    real-world AI systems including Machine Learning models, RAG pipelines,
-    and automation tools.
-  </p>
+  The hands-on technical sessions and AI/ML training in this event will be conducted by 
+  <b> Suraj Kumar Pandey</b>, who will guide participants from fundamentals to building 
+  real-world AI systems including Machine Learning models, RAG pipelines, and automation tools.
+</p>
 
   <h4 style={{ marginTop: "20px" }}>🚀 Key Experience & Exposure</h4>
 
