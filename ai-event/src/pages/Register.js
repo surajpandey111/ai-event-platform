@@ -103,6 +103,42 @@ const Register = () => {
     >
       <h2>🚀 AI/ML Workshop & Hackathon 2026</h2>
 
+            {/* 🔥 OFFER CARD */}
+      <div style={{
+        background: "linear-gradient(135deg, #ff4e50, #f9d423)",
+        color: "#fff",
+        padding: "20px",
+        borderRadius: "15px",
+        marginBottom: "25px",
+        boxShadow: "0 10px 30px rgba(0,0,0,0.2)"
+      }}>
+        <h3 style={{ marginBottom: "10px" }}>
+          🔥 Early Bird Offer (Limited Time)
+        </h3>
+      
+        <p style={{ fontSize: "18px", marginBottom: "10px" }}>
+          <span style={{ textDecoration: "line-through" }}>₹100</span>
+          <span style={{ fontSize: "26px", marginLeft: "10px", fontWeight: "bold" }}>
+            ₹49
+          </span>
+          <span style={{ marginLeft: "10px" }}> (50% OFF)</span>
+        </p>
+      
+        <p style={{ fontWeight: "bold" }}>
+          ⚠️ Price will increase soon:
+        </p>
+      
+        <ul style={{ textAlign: "left", marginTop: "10px" }}>
+          <li>👉 Next Phase: ₹79</li>
+          <li>👉 Last Day: ₹100</li>
+          <li>👉 On-Spot Entry: ₹200</li>
+        </ul>
+      
+        <p style={{ marginTop: "10px", fontWeight: "bold", color: "#000" }}>
+          ⏳ Limited Seats: Only 200 Available
+        </p>
+      </div>
+
       <input name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} /><br /><br />
       <input name="email" placeholder="Email" value={formData.email} onChange={handleChange} /><br /><br />
       <input name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} /><br /><br />
@@ -112,8 +148,13 @@ const Register = () => {
       <input name="year" placeholder="Year" value={formData.year} onChange={handleChange} /><br /><br />
       <input name="college" placeholder="College" value={formData.college} onChange={handleChange} /><br /><br />
 
+      
+
       {/* 🔥 PAYMENT */}
       <h3>💳 Only ₹49 Pay via UPI</h3>
+        <p style={{ color: "red", fontWeight: "bold" }}>
+       🚨 Hurry! Early Bird Discount Ending Soon...
+        </p>
 
       {/* ✅ NEW: UPI INSTANT BUTTON */}
       <a href="upi://pay?pa=7488723028@ibl&pn=Suraj&am=49&cu=INR&tn=AIWorkshop">

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
+import Landing from "./pages/Landing";
 import Register from "./pages/Register";
 import Ticket from "./pages/Ticket";
 import Success from "./pages/Success";
@@ -11,11 +12,18 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+
+        {/* 🔥 LANDING FIRST */}
+        <Route path="/" element={<Landing />} />
+
+        {/* MAIN WEBSITE */}
+        <Route path="/home" element={<Home />} />
+
         <Route path="/register" element={<Register />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/ticket" element={<Ticket />} />
         <Route path="/success" element={<Success />} />
+
       </Routes>
     </Router>
   );

@@ -119,6 +119,7 @@ const Home = () => {
         <li> Certificate for All</li>
       </ul>
 
+
 <hr />
 {/* 🔥 ORGANIZING TEAM */}
 <h2 style={{ textAlign: "center" }}> Event Leadership & Coordination</h2>
@@ -163,7 +164,74 @@ const Home = () => {
   </p>
 
 </div>
+{/* 🔥 EVENT DATE FLASH */}
+<div style={{
+  background: "linear-gradient(90deg, #ff512f, #dd2476)",
+  color: "#fff",
+  padding: "15px",
+  borderRadius: "12px",
+  marginTop: "30px",
+  fontWeight: "bold",
+  fontSize: "18px"
+}}>
+  📅 Tentative Dates: 17th & 18th (2-Day AI/ML Workshop)
+</div>
 
+
+{/* 🔥 TECHNICAL PROFILE */}
+<h2 style={{ marginTop: "40px" }}>🧠 Technical Instructor / Researcher</h2>
+
+<div style={cardStyle}>
+  <h3>🧠 Suraj Kumar Pandey</h3>
+
+  <p style={{ fontWeight: "bold", color: "#007bff" }}>
+    AI/ML Engineer • Technical Instructor • AI Systems Developer
+  </p>
+
+  <p style={{ fontSize: "15px", lineHeight: "1.6" }}>
+    🇮🇳 IndiaAI (Govt. of India) Contributor • AI Mineral Targeting Systems <br />
+    🏢 AI/Data Intern – Coal India Limited (Govt. PSU) <br />
+    🌍 International AI Exposure – Berlin, Germany <br />
+    🎓 IIT Madras (DS/ML) • Techfest IIT Bombay • NIELIT (Outstanding) <br />
+    🤖 Expert in LLMs, RAG Systems, Agentic AI & Real-World AI Deployment
+  </p>
+
+  <p style={{ marginTop: "10px", fontWeight: "bold", color: "#28a745" }}>
+    ⚡ Learn from real-world AI systems & government-level projects
+  </p>
+</div>
+
+  {/* 🔥 TEAM SECTION */}
+  <h2 style={{ marginTop: "40px" }}>👥 Technical & Support Team</h2>
+  
+  <div style={{
+    display: "flex",
+    justifyContent: "space-between",
+    flexWrap: "wrap",
+    gap: "20px"
+  }}>
+  
+    {/* TECH TEAM */}
+    <div style={teamBox}>
+      <h3 style={{ color: "#007bff" }}>💻 Technical Team</h3>
+      <ul style={listStyle}>
+        <li>Gudhal Chauhan</li>
+        <li>Tanshu Gautam</li>
+        <li>Deepanshu Mishra</li>
+      </ul>
+    </div>
+  
+    {/* SUPPORT TEAM */}
+    <div style={teamBox}>
+      <h3 style={{ color: "#28a745" }}>🤝 Support Team</h3>
+      <ul style={listStyle}>
+        <li>Jitesh Siddhartha</li>
+        <li>Sumit Pandey</li>
+        <li>Anurag Kushwaha</li>
+      </ul>
+    </div>
+  
+  </div>
 
 <hr />
 {/* 🔥 CONTACT */}
@@ -248,6 +316,30 @@ const btnGreen = {
   border: "none",
   borderRadius: "10px",
   cursor: "pointer"
+};
+
+const cardStyle = {
+  background: "#f8f9fa",
+  padding: "20px",
+  borderRadius: "15px",
+  marginTop: "20px",
+  boxShadow: "0 5px 20px rgba(0,0,0,0.1)"
+};
+
+const teamBox = {
+  flex: "1",
+  minWidth: "250px",
+  background: "#ffffff",
+  padding: "20px",
+  borderRadius: "15px",
+  boxShadow: "0 5px 20px rgba(0,0,0,0.1)"
+};
+
+const listStyle = {
+  listStyle: "none",
+  padding: 0,
+  marginTop: "10px",
+  lineHeight: "2"
 };
 
 export default Home;
