@@ -4,16 +4,14 @@ import { useNavigate } from "react-router-dom";
 const Landing = () => {
   const navigate = useNavigate();
 
-  const [secondsLeft, setSecondsLeft] = useState(20);
+  const [secondsLeft, setSecondsLeft] = useState(15);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const images = [
     "/indiaai1.jpg",
     "/indiaai2.jpg",
     "/indiaai3.jpg",
-    "/indiaai4.jpg",
     "/indiaai5.jpg",
-    "/indiaai6.jpg",
     "/indiaai7.jpg",
     "/indiaai8.jpg",
   ];
@@ -22,7 +20,7 @@ const Landing = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % images.length);
-    }, 2000);
+    }, 2500);
     return () => clearInterval(interval);
   }, [images.length]);
 
@@ -56,7 +54,7 @@ const Landing = () => {
 
         {/* 🔥 OFFER */}
         <div style={offerBanner}>
-          🔥 Early Bird: <span style={{ textDecoration: "line-through" }}>₹100</span> → ₹59 (50% OFF)
+          🔥 Early Bird: <span style={{ textDecoration: "line-through" }}>₹100</span> → ₹49 (50% OFF)
         </div>
 
         {/* TITLE */}

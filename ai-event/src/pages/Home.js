@@ -174,15 +174,15 @@ const Home = () => {
   fontWeight: "bold",
   fontSize: "18px"
 }}>
-  📅 Tentative Dates: 17th & 18th (2-Day AI/ML Workshop)
+   Tentative Dates: 17th & 18th (2-Day AI/ML Workshop)
 </div>
 
 
 {/* 🔥 TECHNICAL PROFILE */}
-<h2 style={{ marginTop: "40px" }}>🧠 Technical Instructor / Researcher</h2>
+<h2 style={{ marginTop: "40px" }}>Technical Instructor / Researcher</h2>
 
 <div style={cardStyle}>
-  <h3>🧠 Suraj Kumar Pandey</h3>
+  <h3> Suraj Kumar Pandey</h3>
 
   <p style={{ fontWeight: "bold", color: "#007bff" }}>
     AI/ML Engineer • Technical Instructor • AI Systems Developer
@@ -190,10 +190,10 @@ const Home = () => {
 
   <p style={{ fontSize: "15px", lineHeight: "1.6" }}>
     🇮🇳 IndiaAI (Govt. of India) Contributor • AI Mineral Targeting Systems <br />
-    🏢 AI/Data Intern – Coal India Limited (Govt. PSU) <br />
-    🌍 International AI Exposure – Berlin, Germany <br />
-    🎓 IIT Madras (DS/ML) • Techfest IIT Bombay • NIELIT (Outstanding) <br />
-    🤖 Expert in LLMs, RAG Systems, Agentic AI & Real-World AI Deployment
+     AI/Data Intern – Coal India Limited (Govt. PSU) <br />
+     International AI Exposure – Berlin, Germany <br />
+     IIT Madras (DS/ML) • Techfest IIT Bombay • NIELIT (Outstanding) <br />
+     Expert in LLMs, RAG Systems, Agentic AI & Real-World AI Deployment
   </p>
 
   <p style={{ marginTop: "10px", fontWeight: "bold", color: "#28a745" }}>
