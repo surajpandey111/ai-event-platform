@@ -181,13 +181,13 @@ const Home = () => {
 <h4> Student Coordinators</h4>
 
 <p>
-  Anand Chaudhary (Management)<br />
+  Gudhal chauhan  (Management)<br />
   📞 8601499399
 </p>
 
 <p>
-  Gudhal chauhan (Registration)<br />
-  📞 7453879136
+  Tanshu Gautam (Registration)<br />
+  📞 9084510773
 </p>
 
 <p>
