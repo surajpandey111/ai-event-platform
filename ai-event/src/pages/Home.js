@@ -24,6 +24,19 @@ const Home = () => {
         </button>
       </div>
 
+           {/* 🔥 EVENT DATE FLASH */}
+     <div style={{
+       background: "linear-gradient(90deg, #ff512f, #dd2476)",
+       color: "#fff",
+       padding: "15px",
+       borderRadius: "12px",
+       marginTop: "30px",
+       fontWeight: "bold",
+       fontSize: "18px"
+     }}>
+        Tentative Dates: 17th & 18th (2-Day AI/ML Workshop)
+     </div>
+
       <hr />
 
       {/* 🔥 ABOUT */}
@@ -164,18 +177,7 @@ const Home = () => {
   </p>
 
 </div>
-{/* 🔥 EVENT DATE FLASH */}
-<div style={{
-  background: "linear-gradient(90deg, #ff512f, #dd2476)",
-  color: "#fff",
-  padding: "15px",
-  borderRadius: "12px",
-  marginTop: "30px",
-  fontWeight: "bold",
-  fontSize: "18px"
-}}>
-   Tentative Dates: 17th & 18th (2-Day AI/ML Workshop)
-</div>
+
 
 
 {/* 🔥 TECHNICAL PROFILE */}
