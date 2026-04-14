@@ -227,7 +227,7 @@ const Home = () => {
       <ul style={listStyle}>
         <li>Jitesh Siddhartha</li>
         <li>Sumit Pandey</li>
-        <li>Utkarsh Upadhyay</li>
+        <li>------</li>
       </ul>
     </div>
   
