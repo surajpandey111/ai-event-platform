@@ -191,17 +191,22 @@ const Home = () => {
   </p>
 
   <p style={{ fontSize: "15px", lineHeight: "1.6" }}>
-  🇮🇳 IndiaAI (Govt. of India) Contributor • AI Mineral Targeting Systems <br />
-  AI/Data Analytics Trainee Engineer – Coal India Limited (Govt. PSU) <br />
-  Technical AI Strategy on Jan Shayak AI (Union Ministry, Govt. of India Project) <br />
-  International AI Exposure – Berlin, Germany (Retresco AI Project) <br />
-  NICEDT & ICEDET Research Paper Presenter (AI/ML) <br />
-  IIT Madras (DS/ML) • Techfest IIT Bombay • NIELIT (Outstanding) <br />
-  Expert in LLMs, RAG Systems, Agentic AI & Real-World AI Deployment
- </p>
+    🇮🇳 IndiaAI (Govt. of India) Contributor • AI Mineral Targeting Systems <br />
+    AI/Data Analytics Trainee Engineer – Coal India Limited (Govt. PSU) <br />
+    Technical AI Strategy on Jan Shayak AI (Union Ministry, Govt. of India Project) <br />
+    International AI Exposure – Berlin, Germany (Retresco AI Project) <br />
+    NICEDT & ICEDET Research Paper Presenter (AI/ML) <br />
+    IIT Madras (DS/ML) • Techfest IIT Bombay • NIELIT (Outstanding) <br />
+    Expert in LLMs, RAG Systems, Agentic AI & Real-World AI Deployment
+  </p>
 
   <p style={{ marginTop: "10px", fontWeight: "bold", color: "#28a745" }}>
     ⚡ Learn from real-world AI systems & government-level projects
+  </p>
+
+  {/* 🔥 MENTOR LINE */}
+  <p style={{ marginTop: "10px", fontStyle: "italic", color: "#555" }}>
+    🎓 Guided by Dr. Ashok Kumar Yadav (Mentor)
   </p>
 </div>
 
