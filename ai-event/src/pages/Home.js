@@ -218,10 +218,6 @@ const Home = () => {
     ⚡ Learn from real-world AI systems & government-level projects
   </p>
 
-  {/* 🔥 MENTOR LINE */}
-  <p style={{ marginTop: "10px", fontStyle: "italic", color: "#555" }}>
-    🎓 Guided by Dr. Ashok Kumar Yadav (Mentor)
-  </p>
 </div>
 
 {/* 🔥 ORGANIZING COMMITTEE */}
