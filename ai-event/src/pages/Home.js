@@ -184,21 +184,7 @@ const Home = () => {
 <h2 style={{ marginTop: "40px" }}>Technical Instructor / Researcher</h2>
 
 <div style={cardStyle}>
-  <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "10px" }}>
-  
   <h3 style={{ margin: 0 }}>Suraj Kumar Pandey</h3>
-
-  <span style={{
-    background: "#f1f1f1",
-    padding: "4px 10px",
-    borderRadius: "8px",
-    fontSize: "13px",
-    color: "#555"
-  }}>
-    🎓 Guided by Dr. Ashok Kumar Yadav
-  </span>
-
-</div>
 
   <p style={{ fontWeight: "bold", color: "#007bff" }}>
     AI/ML Engineer • Technical Instructor • AI Systems Developer
