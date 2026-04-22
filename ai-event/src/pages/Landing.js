@@ -52,9 +52,15 @@ const Landing = () => {
 
       <div style={container}>
 
-        {/* 🔥 OFFER */}
+        {/* 🔥 FREE BADGE */}
+        <div style={freeBadge}>
+          🎟 FREE ENTRY • CERTIFICATE INCLUDED
+        </div>
+
+        {/* 🔥 OFFER / INFO */}
         <div style={offerBanner}>
-          🔥 Early Bird: <span style={{ textDecoration: "line-through" }}>₹100</span> → ₹49 (50% OFF)
+          🎉 Free Registration Open  
+          ⚡ Limited Seats: Only 200 Available
         </div>
 
         {/* TITLE */}
@@ -65,12 +71,13 @@ const Landing = () => {
         {/* SUBTITLE */}
         <p style={{ color: "#ccc" }}>
           🇮🇳 IndiaAI Summit Participant <br />
-          🇮🇳 IndiaAI Mineral Targeting Contributors
+          Govt AI Research & Innovation Exposure <br />
+          Real-World AI Systems & Model Development
         </p>
 
         {/* TIMER */}
         <div style={timerStyle}>
-          ⏳ Redirecting in {secondsLeft}s
+          ⏳ Opening event page in {secondsLeft}s...
         </div>
 
         {/* SLIDER */}
@@ -92,18 +99,13 @@ const Landing = () => {
           onClick={() => navigate("/register")}
           style={registerBtn}
         >
-          🚀 Register Now
+          🎟 Register & Get Free Ticket
         </button>
 
-        {/* 🔥 SKIP BUTTON */}
+        {/* SKIP */}
         <p
           onClick={() => navigate("/home")}
-          style={{
-            marginTop: "15px",
-            color: "#ccc",
-            cursor: "pointer",
-            textDecoration: "underline"
-          }}
+          style={skipStyle}
         >
           Skip →
         </p>
@@ -150,6 +152,16 @@ const closeBtn = {
   cursor: "pointer"
 };
 
+const freeBadge = {
+  background: "#28a745",
+  color: "#fff",
+  padding: "8px 15px",
+  borderRadius: "8px",
+  display: "inline-block",
+  marginBottom: "10px",
+  fontWeight: "bold"
+};
+
 const offerBanner = {
   background: "#ffe600",
   padding: "10px",
@@ -184,4 +196,11 @@ const registerBtn = {
   borderRadius: "10px",
   cursor: "pointer",
   marginTop: "15px"
+};
+
+const skipStyle = {
+  marginTop: "15px",
+  color: "#ccc",
+  cursor: "pointer",
+  textDecoration: "underline"
 };

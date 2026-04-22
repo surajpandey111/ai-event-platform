@@ -122,15 +122,16 @@ const Home = () => {
         <li>Strong technical foundation</li>
       </ul>
 
-      {/* 🔥 PRIZES */}
-      <h2> Prizes & Certification</h2>
-      <ul style={{ textAlign: "left" }}>
-        <li> 1st Prize – Trophy  + Certificate(special recognization) + Special Gift</li>
-        <li> 2nd Prize – Trophy  + Certificate(special recognization) + Special Gift</li>
-        <li> 3rd Prize – Trophy  + Certificate(special recognization) + Special Gift</li>
-        <li> Quiz Winners</li>
-        <li> Certificate for All & Mentorship for all Participants</li>
-      </ul>
+{/* 🔥 CERTIFICATION & MENTORSHIP */}
+<h2>📜 Certification & Mentorship</h2>
+
+<ul style={{ textAlign: "left", lineHeight: "1.8" }}>
+  <li>📜 <b>All Participants</b> – Receive an Official E-Certificate</li>
+  <li>⬇️ <b>Certificate Download</b> – Available directly from the website</li>
+  <li>🧠 <b>Quiz & Participation</b> – Recognition during sessions</li>
+  <li>🚀 <b>Technical Mentorship</b> – Live guidance during workshop sessions</li>
+  <li>💡 <b>Project Support</b> – Help in building AI/ML models & ideas</li>
+</ul>
 
 
 <hr />

@@ -9,17 +9,14 @@ const Register = () => {
     rollNo: "",
     branch: "",
     year: "",
-    college: "",
-    txnId: ""
+    college: ""
   });
-
-  const [whatsappClicked, setWhatsappClicked] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // ✅ VALIDATION FUNCTION
+  // ✅ SIMPLE VALIDATION
   const validateForm = () => {
     const {
       name,
@@ -29,8 +26,7 @@ const Register = () => {
       rollNo,
       branch,
       year,
-      college,
-      txnId
+      college
     } = formData;
 
     if (
@@ -41,15 +37,9 @@ const Register = () => {
       !rollNo ||
       !branch ||
       !year ||
-      !college ||
-      !txnId
+      !college
     ) {
       alert("⚠️ Please fill all fields");
-      return false;
-    }
-
-    if (!whatsappClicked) {
-      alert("⚠️ Please send screenshot on WhatsApp before submitting");
       return false;
     }
 
@@ -69,9 +59,9 @@ const Register = () => {
         body: JSON.stringify(formData)
       });
 
-      alert("✅ Registration submitted! Wait for approval.");
+      alert("✅ Registration Successful! Now go to Get Ticket 🎟");
 
-      // Reset form
+      // reset
       setFormData({
         name: "",
         email: "",
@@ -80,11 +70,8 @@ const Register = () => {
         rollNo: "",
         branch: "",
         year: "",
-        college: "",
-        txnId: ""
+        college: ""
       });
-
-      setWhatsappClicked(false);
 
     } catch (error) {
       console.error(error);
@@ -103,42 +90,20 @@ const Register = () => {
     >
       <h2>🚀 AI/ML Workshop & Hackathon 2026</h2>
 
-            {/* 🔥 OFFER CARD */}
+      {/* 🔥 FREE BADGE */}
       <div style={{
-        background: "linear-gradient(135deg, #ff4e50, #f9d423)",
+        background: "linear-gradient(135deg, #28a745, #00c853)",
         color: "#fff",
         padding: "20px",
         borderRadius: "15px",
         marginBottom: "25px",
-        boxShadow: "0 10px 30px rgba(0,0,0,0.2)"
+        fontWeight: "bold"
       }}>
-        <h3 style={{ marginBottom: "10px" }}>
-          🔥 Early Bird Offer (Limited Time)
-        </h3>
-      
-        <p style={{ fontSize: "18px", marginBottom: "10px" }}>
-          <span style={{ textDecoration: "line-through" }}>₹100</span>
-          <span style={{ fontSize: "26px", marginLeft: "10px", fontWeight: "bold" }}>
-            ₹49
-          </span>
-          <span style={{ marginLeft: "10px" }}> (50% OFF)</span>
-        </p>
-      
-        <p style={{ fontWeight: "bold" }}>
-          ⚠️ Price will increase soon:
-        </p>
-      
-        <ul style={{ textAlign: "left", marginTop: "10px" }}>
-          <li>👉 Next Phase: ₹79</li>
-          <li>👉 Last Day: ₹100</li>
-          <li>👉 On-Spot Entry: ₹200</li>
-        </ul>
-      
-        <p style={{ marginTop: "10px", fontWeight: "bold", color: "#000" }}>
-          ⏳ Limited Seats: Only 200 Available
-        </p>
+        🎉 FREE REGISTRATION OPEN  
+        ⚡ Limited Seats: Only 200 Available
       </div>
 
+      {/* FORM */}
       <input name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} /><br /><br />
       <input name="email" placeholder="Email" value={formData.email} onChange={handleChange} /><br /><br />
       <input name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} /><br /><br />
@@ -148,80 +113,7 @@ const Register = () => {
       <input name="year" placeholder="Year" value={formData.year} onChange={handleChange} /><br /><br />
       <input name="college" placeholder="College" value={formData.college} onChange={handleChange} /><br /><br />
 
-      
-
-      {/* 🔥 PAYMENT */}
-      <h3>💳 Only ₹49 Pay via UPI</h3>
-        <p style={{ color: "red", fontWeight: "bold" }}>
-       🚨 Hurry! Early Bird Discount Ending Soon...
-        </p>
-
-      {/* ✅ NEW: UPI INSTANT BUTTON */}
-      <a href="upi://pay?pa=7488723028@ibl&pn=Suraj&am=49&cu=INR&tn=AIWorkshop">
-        <button
-          style={{
-            background: "#6f42c1",
-            color: "#fff",
-            padding: "12px 20px",
-            border: "none",
-            borderRadius: "10px",
-            cursor: "pointer",
-            marginBottom: "15px"
-          }}
-        >
-          💳 Pay ₹49 Instantly (Mobile)
-        </button>
-      </a>
-
-      <p style={{ color: "green" }}>
-        ✔ Mobile: Click button | Laptop: Scan QR
-      </p>
-
-      {/* 🔥 QR CODE */}
-      <img
-        src="/upi-qr.png"
-        alt="UPI QR"
-        style={{ width: "200px", margin: "20px" }}
-      />
-
-      <p>Scan QR → Pay → Enter Transaction ID 👇</p>
-
-      <input
-        name="txnId"
-        placeholder="Enter UPI Transaction ID"
-        value={formData.txnId}
-        onChange={handleChange}
-      /><br /><br />
-
-      {/* 🔥 WHATSAPP VERIFICATION */}
-      <p style={{ color: "red", fontWeight: "bold" }}>
-        ⚠️ Mandatory: Send payment screenshot on WhatsApp before submitting
-      </p>
-
-      <a
-        href={`https://wa.me/917488723028?text=Hello%20I%20have%20paid%20for%20AI%20Workshop.%20Txn%20ID:%20${formData.txnId}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={() => setWhatsappClicked(true)}
-      >
-        <button
-          style={{
-            background: "#25D366",
-            color: "#fff",
-            padding: "10px 20px",
-            border: "none",
-            borderRadius: "8px",
-            cursor: "pointer",
-            marginBottom: "20px"
-          }}
-        >
-          📩 Send Screenshot on WhatsApp
-        </button>
-      </a>
-
-      <br />
-
-      {/* 🔥 SUBMIT */}
+      {/* SUBMIT */}
       <button
         onClick={handleSubmit}
         style={{
@@ -234,8 +126,12 @@ const Register = () => {
           cursor: "pointer"
         }}
       >
-        ✅ Submit Registration
+        ✅ Register Now
       </button>
+
+      <p style={{ marginTop: "15px", color: "gray" }}>
+        🎟 After registration, go to "Get Ticket" page
+      </p>
     </div>
   );
 };

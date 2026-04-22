@@ -15,7 +15,7 @@ const app = express();
 
 // 🔥 MIDDLEWARE
 app.use(cors({ origin: "*" }));
-app.use(express.json()); // better than bodyParser
+app.use(express.json());
 
 // 🔥 TEST ROUTE
 app.get("/", (req, res) => {
@@ -24,19 +24,21 @@ app.get("/", (req, res) => {
 
 
 /* =====================================================
-   ✅ 1. REGISTER USER (WHATSAPP + TXN)
+   ✅ 1. REGISTER USER (FREE + AUTO TICKET)
 ===================================================== */
 app.post("/register-user", async (req, res) => {
   try {
     const data = req.body;
 
-    // 🔥 VALIDATION
-    if (!data.email || !data.name || !data.txnId) {
+    // ✅ VALIDATION
+    if (!data.email || !data.name) {
       return res.status(400).json({
         success: false,
         message: "Missing required fields"
       });
     }
+
+    const ticketId = "TICKET_" + Date.now();
 
     // 🔥 SAVE USER
     await db.collection("users").doc(data.email).set({
@@ -48,17 +50,18 @@ app.post("/register-user", async (req, res) => {
       branch: data.branch || "",
       year: data.year || "",
       college: data.college || "",
-      txnId: data.txnId,
 
-      paymentStatus: "pending", // pending → approved manually
-      ticketGenerated: false,
+      paymentStatus: "approved",   // 🔥 AUTO APPROVED
+      ticketGenerated: true,
+      ticketId,
 
       createdAt: new Date()
     });
 
     res.json({
       success: true,
-      message: "Registration successful"
+      message: "Registration successful",
+      ticketId
     });
 
   } catch (error) {
@@ -72,7 +75,7 @@ app.post("/register-user", async (req, res) => {
 
 
 /* =====================================================
-   📥 2. GET ALL USERS (ADMIN PANEL)
+   📥 2. GET ALL USERS (ADMIN PANEL - OPTIONAL)
 ===================================================== */
 app.get("/users", async (req, res) => {
   try {
@@ -92,7 +95,7 @@ app.get("/users", async (req, res) => {
 
 
 /* =====================================================
-   🔍 3. GET SINGLE USER (FOR TICKET)
+   🔍 3. GET SINGLE USER
 ===================================================== */
 app.get("/user/:email", async (req, res) => {
   try {
@@ -110,48 +113,7 @@ app.get("/user/:email", async (req, res) => {
 
 
 /* =====================================================
-   ✅ 4. APPROVE USER
-===================================================== */
-app.post("/approve-user", async (req, res) => {
-  try {
-    const { email } = req.body;
-
-    const ticketId = "TICKET_" + Date.now();
-
-    await db.collection("users").doc(email).update({
-      paymentStatus: "approved",
-      ticketGenerated: true,
-      ticketId,
-      approvedAt: new Date()
-    });
-
-    res.send("User approved");
-  } catch (error) {
-    res.status(500).send("Error approving user");
-  }
-});
-
-
-/* =====================================================
-   ❌ 5. REJECT USER
-===================================================== */
-app.post("/reject-user", async (req, res) => {
-  try {
-    const { email } = req.body;
-
-    await db.collection("users").doc(email).update({
-      paymentStatus: "rejected"
-    });
-
-    res.send("User rejected");
-  } catch (error) {
-    res.status(500).send("Error rejecting user");
-  }
-});
-
-
-/* =====================================================
-   🎟️ 6. CHECK TICKET
+   🎟️ 4. GET TICKET (DIRECT ACCESS)
 ===================================================== */
 app.get("/ticket/:email", async (req, res) => {
   try {
@@ -163,11 +125,9 @@ app.get("/ticket/:email", async (req, res) => {
 
     const user = doc.data();
 
-    if (user.paymentStatus !== "approved") {
-      return res.status(403).send("Not approved yet");
-    }
-
+    // 🔥 Already approved always
     res.json(user);
+
   } catch (error) {
     res.status(500).send("Error fetching ticket");
   }

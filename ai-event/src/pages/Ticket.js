@@ -4,35 +4,55 @@ const Ticket = () => {
   const [email, setEmail] = useState("");
   const [user, setUser] = useState(null);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const fetchTicket = async () => {
+    if (!email) {
+      setError("⚠️ Please enter your email");
+      return;
+    }
+
     try {
-      const res = await fetch(`https://ai-event-platform.onrender.com/ticket/${email}`);
+      setLoading(true);
+      setError("");
+
+      const res = await fetch(
+        `https://ai-event-platform.onrender.com/ticket/${email}`
+      );
 
       if (!res.ok) {
-        setError("❌ Not approved or invalid email");
+        setError("❌ Ticket not found. Please register first.");
         setUser(null);
+        setLoading(false);
         return;
       }
 
       const data = await res.json();
       setUser(data);
-      setError("");
+      setLoading(false);
+
     } catch (err) {
       console.error(err);
       setError("⚠️ Server error. Try again.");
+      setLoading(false);
     }
   };
 
   return (
-    <div style={{ textAlign: "center", padding: "40px", maxWidth: "600px", margin: "auto" }}>
-      
+    <div
+      style={{
+        textAlign: "center",
+        padding: "40px",
+        maxWidth: "600px",
+        margin: "auto"
+      }}
+    >
       <h2>🎟 Get Your Event Ticket</h2>
 
       {!user && (
         <>
           <input
-            placeholder="Enter your email"
+            placeholder="Enter your registered email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             style={{
@@ -54,10 +74,14 @@ const Ticket = () => {
               cursor: "pointer"
             }}
           >
-            Get Ticket
+            {loading ? "Loading..." : "Get Ticket"}
           </button>
 
-          {error && <p style={{ color: "red", marginTop: "10px" }}>{error}</p>}
+          {error && (
+            <p style={{ color: "red", marginTop: "10px" }}>
+              {error}
+            </p>
+          )}
         </>
       )}
 
@@ -80,16 +104,16 @@ const Ticket = () => {
           <p><strong>Branch:</strong> {user.branch}</p>
           <p><strong>Year:</strong> {user.year}</p>
 
-          {/* 🔥 QR CODE (NOW USING TICKET ID) */}
+          {/* 🔥 QR CODE */}
           <img
             src={`https://api.qrserver.com/v1/create-qr-code/?data=${user.ticketId}`}
             alt="QR"
-            style={{ margin: "20px" }}
+            style={{ margin: "20px", width: "150px" }}
           />
 
-          <h3 style={{ color: "green" }}>✅ ENTRY APPROVED</h3>
+          <h3 style={{ color: "green" }}>✅ ENTRY CONFIRMED</h3>
 
-          {/* 🔥 DOWNLOAD BUTTON */}
+          {/* DOWNLOAD */}
           <button
             onClick={() => window.print()}
             style={{

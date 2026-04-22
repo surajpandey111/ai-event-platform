@@ -7,7 +7,7 @@ const Admin = () => {
 
   const API = "https://ai-event-platform.onrender.com";
 
-  // 🔐 PASSWORD CHECK
+  // 🔐 PASSWORD
   useEffect(() => {
     const pass = prompt("Enter Admin Password:");
 
@@ -15,7 +15,7 @@ const Admin = () => {
       setAuthorized(true);
     }
 
-    setChecked(true); // mark check done
+    setChecked(true);
   }, []);
 
   // 🔥 FETCH USERS
@@ -35,43 +35,17 @@ const Admin = () => {
     }
   }, [authorized]);
 
-  const approveUser = async (email) => {
-    await fetch(`${API}/approve-user`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ email })
-    });
-
-    fetchUsers();
-  };
-
-  const rejectUser = async (email) => {
-    await fetch(`${API}/reject-user`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ email })
-    });
-
-    fetchUsers();
-  };
-
-  // ⏳ WAIT UNTIL PASSWORD CHECK
   if (!checked) {
     return <h2 style={{ textAlign: "center" }}>Loading...</h2>;
   }
 
-  // ❌ NOT AUTHORIZED
   if (!authorized) {
     return <h2 style={{ textAlign: "center" }}>❌ Unauthorized Access</h2>;
   }
 
   return (
     <div style={{ padding: "30px" }}>
-      <h2>🛠 Admin Dashboard</h2>
+      <h2>🛠 Admin Dashboard (Registrations)</h2>
 
       <table border="1" cellPadding="10" style={{ width: "100%", marginTop: "20px" }}>
         <thead>
@@ -79,9 +53,10 @@ const Admin = () => {
             <th>Name</th>
             <th>Email</th>
             <th>College</th>
-            <th>Txn ID</th>
+            <th>Branch</th>
+            <th>Year</th>
+            <th>Ticket ID</th>
             <th>Status</th>
-            <th>Action</th>
           </tr>
         </thead>
 
@@ -91,39 +66,21 @@ const Admin = () => {
               <td>{user.name}</td>
               <td>{user.email}</td>
               <td>{user.college}</td>
-              <td>{user.txnId || "N/A"}</td>
-              <td>
-                {user.paymentStatus === "approved"
-                  ? "✅ Approved"
-                  : user.paymentStatus === "rejected"
-                  ? "❌ Rejected"
-                  : "⏳ Pending"}
-              </td>
-
-              <td>
-                {user.paymentStatus === "pending" && (
-                  <>
-                    <button onClick={() => approveUser(user.email)}>
-                      ✅ Approve
-                    </button>
-
-                    <button
-                      onClick={() => rejectUser(user.email)}
-                      style={{ marginLeft: "10px" }}
-                    >
-                      ❌ Reject
-                    </button>
-                  </>
-                )}
-
-                {user.paymentStatus === "approved" && (
-                  <p>🎟 {user.ticketId}</p>
-                )}
+              <td>{user.branch}</td>
+              <td>{user.year}</td>
+              <td>🎟 {user.ticketId}</td>
+              <td style={{ color: "green", fontWeight: "bold" }}>
+                ✅ Registered
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+
+      {/* 🔥 COUNT */}
+      <p style={{ marginTop: "20px", fontWeight: "bold" }}>
+        Total Registrations: {users.length}
+      </p>
     </div>
   );
 };
