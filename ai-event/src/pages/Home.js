@@ -34,7 +34,7 @@ const Home = () => {
        fontWeight: "bold",
        fontSize: "18px"
      }}>
-        Tentative Dates: 29th & 30th of April (2-Day AI/ML Workshop)||Post-CT Session (Confirmed)
+        Tentative Dates: 29th & 30th of April (2-Day AI/ML Workshop)||Either Offline/Online
      </div>
 
       <hr />
