@@ -34,7 +34,7 @@ const Home = () => {
        fontWeight: "bold",
        fontSize: "18px"
      }}>
-        Tentative Dates: 29th & 30th of April (2-Day AI/ML Workshop)||Either Offline/Online
+        Final Dates: 30th of April at APJ.Conference Hall
      </div>
 
       <hr />
@@ -193,7 +193,7 @@ const Home = () => {
 
   <p style={{ fontSize: "15px", lineHeight: "1.6" }}>
     🇮🇳 IndiaAI (Govt. of India) Contributor • AI Mineral Targeting Systems <br />
-    AI/Data Analytics Trainee Engineer – Coal India Limited (Govt. PSU) <br />
+    AI/Data Analytics Trainee Engineer – Coal India Limited (Govt. PSU) at HQ (Kolkata) <br />
     Technical AI Strategy on Jan Shayak AI (Union Ministry, Govt. of India Project) <br />
     International AI Exposure – Berlin, Germany (Retresco AI Project) <br />
     NICEDT & ICEDET Research Paper Presenter (AI/ML) <br />
@@ -258,7 +258,7 @@ const Home = () => {
       <ul style={listStyle}>
         <li>Jitesh Siddhartha</li>
         <li>Sumit Pandey</li>
-        <li>------</li>
+        <li>Anurag Kushwah</li>
       </ul>
     </div>
   
