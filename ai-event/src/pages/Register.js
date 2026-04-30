@@ -129,6 +129,33 @@ const Register = () => {
         ✅ Register Now
       </button>
 
+      {/* 🔥 WHATSAPP GROUP JOIN */}
+<div style={{ marginTop: "20px" }}>
+  <p style={{ fontWeight: "bold", color: "#25D366" }}>
+    📢 Join Official WhatsApp Group for Updates
+  </p>
+
+  <a
+    href="https://chat.whatsapp.com/K3ws6riKLyQILylsQ8ROQ6"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <button
+      style={{
+        background: "#25D366",
+        color: "#fff",
+        padding: "12px 20px",
+        border: "none",
+        borderRadius: "10px",
+        cursor: "pointer",
+        fontSize: "15px"
+      }}
+    >
+      👉 Join WhatsApp Group
+    </button>
+  </a>
+</div>
+
       <p style={{ marginTop: "15px", color: "gray" }}>
         🎟 After registration, go to "Get Ticket" page
       </p>
