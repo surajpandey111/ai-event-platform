@@ -100,7 +100,7 @@ const Register = () => {
         fontWeight: "bold"
       }}>
         🎉 FREE REGISTRATION OPEN  
-        ⚡ Limited Seats: Only 200 Available
+        ⚡ Limited Seats
       </div>
 
       {/* FORM */}

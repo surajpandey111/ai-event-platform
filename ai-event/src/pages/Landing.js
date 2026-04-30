@@ -60,7 +60,7 @@ const Landing = () => {
         {/* 🔥 OFFER / INFO */}
         <div style={offerBanner}>
           🎉 Free Registration Open  
-          ⚡ Limited Seats: Only 200 Available
+          ⚡ Limited Seats
         </div>
 
         {/* TITLE */}
@@ -91,7 +91,7 @@ const Landing = () => {
 
         {/* SEATS */}
         <p style={{ color: "orange", fontWeight: "bold" }}>
-          ⚠️ Only 200 Seats Available — Filling Fast!
+          ⚠️ Only limited Seats Available — Filling Fast!
         </p>
 
         {/* CTA */}
