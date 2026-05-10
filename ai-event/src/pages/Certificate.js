@@ -41,12 +41,12 @@ const Certificate = () => {
     {
       name: "Ruchi Jha",
       year: "3rd Year",
-      department: "IT"
+      department: "ME"
     },
     {
       name: "Anshika Mishra",
       year: "3rd Year",
-      department: "IT"
+      department: "ME"
     },
     {
       name: "SAUMYA SINGH",
