@@ -250,7 +250,7 @@ const Certificate = () => {
       ctx.fillText(
         foundStudent.name,
         canvas.width / 2,
-        505
+        700
       );
 
       // 🔥 YEAR + DEPARTMENT
@@ -260,7 +260,7 @@ const Certificate = () => {
       ctx.fillText(
         `${foundStudent.year} • ${foundStudent.department}`,
         canvas.width / 2,
-        610
+        800
       );
     };
   };
