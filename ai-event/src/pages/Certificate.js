@@ -2,67 +2,232 @@ import React, { useState, useRef } from "react";
 
 const Certificate = () => {
   const [name, setName] = useState("");
-  const [found, setFound] = useState(false);
+  const [student, setStudent] = useState(null);
 
   const canvasRef = useRef(null);
 
   // ✅ ATTENDED STUDENTS
- const students = [
-    "Suraj Kumar Pandey",
-    "Anand Chaudhary",
-    "Jitesh Siddhartha",
-    "Princi Yadav",
-    "Kriti Verma",
-    "Shilpee Gupta",
-    "Ruchi Jha",
-    "Anshika Mishra",
-    "Saumya Singh",
-    "Vaishnavi Mishra",
-    "Rajeev Rajesh",
-    "Priya Yadav",
-    "Sonam Singh",
-    "Jagriti Maurya",
-    "Saloni",
-    "Kritika Pandey",
-    "Disha Prajapati",
-    "Shalu Maurya",
-    "Deepa Singh",
-    "Aditi Chaubey",
-    "Tripti Gupta",
-    "Sadaf",
-    "Tanishu Gautam",
-    "Gunchal Chauhan",
-    "Divyanshi Kumar",
-    "Utkarsh Upadhyay",
-    "Harshit Pandey",
-    "Siddharth Kumar Gautam",
-    "Satish Kumar",
-    "Avinash Nishad",
-    "Chakradhar Dwivedi",
-    "Krish Chaurasia",
-    "Priyanshu Raj",
-    "Shivam Kumar",
-    "Mukul Dev Bamniya",
-    "Himanshu Kumar",
-    "Priyanshu Gupta",
-    "Pranshu Shukla",
-    "Vansh Katariya",
-    "Abhyuday Pratap Singh",
-    "Rajat Shaily"
-];
+  const students = [
+    {
+      name: "Suraj Kumar Pandey",
+      year: "4th Year",
+      department: "IT"
+    },
+    {
+      name: "Anand Chaudhary",
+      year: "3rd Year",
+      department: "CE"
+    },
+    {
+      name: "Jitesh Siddhartha",
+      year: "2nd Year",
+      department: "IT"
+    },
+    {
+      name: "PRINCI YADAV",
+      year: "1st Year",
+      department: "IT"
+    },
+    {
+      name: "KRITI VERMA",
+      year: "1st Year",
+      department: "IT"
+    },
+    {
+      name: "Shilpee Gupta",
+      year: "3rd Year",
+      department: "IT"
+    },
+    {
+      name: "Ruchi Jha",
+      year: "3rd Year",
+      department: "IT"
+    },
+    {
+      name: "Anshika Mishra",
+      year: "3rd Year",
+      department: "IT"
+    },
+    {
+      name: "SAUMYA SINGH",
+      year: "4th Year",
+      department: "IT"
+    },
+    {
+      name: "VAISHNAVI MISHRA",
+      year: "4th Year",
+      department: "IT"
+    },
+    {
+      name: "RAJEEV RAJESH",
+      year: "4th Year",
+      department: "IT"
+    },
+    {
+      name: "PRIYA YADAV",
+      year: "4th Year",
+      department: "CE"
+    },
+    {
+      name: "SONAM SINGH",
+      year: "2nd Year",
+      department: "IT"
+    },
+    {
+      name: "JAGRITI MAURYA",
+      year: "2nd Year",
+      department: "IT"
+    },
+    {
+      name: "SALONI",
+      year: "2nd Year",
+      department: "IT"
+    },
+    {
+      name: "Kritika Pandey",
+      year: "2nd Year",
+      department: "IT"
+    },
+    {
+      name: "Disha Prajapati",
+      year: "2nd Year",
+      department: "IT"
+    },
+    {
+      name: "Shalu Maurya",
+      year: "2nd Year",
+      department: "IT"
+    },
+    {
+      name: "DEEPA SINGH",
+      year: "2nd Year",
+      department: "IT"
+    },
+    {
+      name: "Aditi Chaubey",
+      year: "2nd Year",
+      department: "IT"
+    },
+    {
+      name: "Tripti Gupta",
+      year: "2nd Year",
+      department: "IT"
+    },
+    {
+      name: "Sadaf",
+      year: "2nd Year",
+      department: "IT"
+    },
+    {
+      name: "Tanishu Gautam",
+      year: "3rd Year",
+      department: "IT"
+    },
+    {
+      name: "Gunchal Chauhan",
+      year: "3rd Year",
+      department: "IT"
+    },
+    {
+      name: "Divyanshi Kumar",
+      year: "1st Year",
+      department: "IT"
+    },
+    {
+      name: "Utkarsh Upadhyay",
+      year: "2nd Year",
+      department: "CE"
+    },
+    {
+      name: "Harshit Pandey",
+      year: "2nd Year",
+      department: "IT"
+    },
+    {
+      name: "SIDDHARTH KUMAR GAUTAM",
+      year: "2nd Year",
+      department: "ME"
+    },
+    {
+      name: "Satish Kumar",
+      year: "1st Year",
+      department: "IT"
+    },
+    {
+      name: "Avinash Nishad",
+      year: "1st Year",
+      department: "IT"
+    },
+    {
+      name: "Chakradhar Dwivedi",
+      year: "1st Year",
+      department: "IT"
+    },
+    {
+      name: "Krish Chaurasia",
+      year: "1st Year",
+      department: "ME"
+    },
+    {
+      name: "Priyanshu Raj",
+      year: "1st Year",
+      department: "ME"
+    },
+    {
+      name: "Shivam Kumar",
+      year: "1st Year",
+      department: "IT"
+    },
+    {
+      name: "Mukul Dev Bamniya",
+      year: "1st Year",
+      department: "IT"
+    },
+    {
+      name: "Himanshu Kumar",
+      year: "1st Year",
+      department: "IT"
+    },
+    {
+      name: "Priyanshu Gupta",
+      year: "1st Year",
+      department: "ME"
+    },
+    {
+      name: "Pranshu Shukla",
+      year: "2nd Year",
+      department: "ME"
+    },
+    {
+      name: "Vansh Katariya",
+      year: "2nd Year",
+      department: "IT"
+    },
+    {
+      name: "Abhyuday Pratap Singh",
+      year: "2nd Year",
+      department: "IT"
+    },
+    {
+      name: "Rajat Shaily",
+      year: "4th Year",
+      department: "IT"
+    }
+  ];
 
+  // ✅ GENERATE CERTIFICATE
   const generateCertificate = () => {
-    const exists = students.find(
-      (s) => s.toLowerCase() === name.toLowerCase()
+    const foundStudent = students.find(
+      (s) => s.name.toLowerCase() === name.toLowerCase()
     );
 
-    if (!exists) {
+    if (!foundStudent) {
       alert("❌ Certificate not found");
-      setFound(false);
+      setStudent(null);
       return;
     }
 
-    setFound(true);
+    setStudent(foundStudent);
 
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
@@ -77,18 +242,30 @@ const Certificate = () => {
       ctx.drawImage(image, 0, 0);
 
       // 🔥 STUDENT NAME
-      ctx.font = "bold 60px cursive";
-      ctx.fillStyle = "#3f2ca0";
+      ctx.font = "bold 58px cursive";
+      ctx.fillStyle = "#4338ca";
       ctx.textAlign = "center";
 
+      // ✅ PERFECT POSITION
       ctx.fillText(
-        name,
+        foundStudent.name,
         canvas.width / 2,
-        500
+        315
+      );
+
+      // 🔥 YEAR + DEPARTMENT
+      ctx.font = "bold 28px Arial";
+      ctx.fillStyle = "#111";
+
+      ctx.fillText(
+        `${foundStudent.year} • ${foundStudent.department}`,
+        canvas.width / 2,
+        540
       );
     };
   };
 
+  // ✅ DOWNLOAD
   const downloadCertificate = () => {
     const canvas = canvasRef.current;
 
@@ -114,9 +291,9 @@ const Certificate = () => {
         value={name}
         onChange={(e) => setName(e.target.value)}
         style={{
-          padding: "10px",
-          width: "300px",
-          borderRadius: "8px",
+          padding: "12px",
+          width: "320px",
+          borderRadius: "10px",
           border: "1px solid #ccc"
         }}
       />
@@ -126,15 +303,16 @@ const Certificate = () => {
       <button
         onClick={generateCertificate}
         style={{
-          padding: "10px 20px",
+          padding: "12px 24px",
           background: "#007bff",
           color: "#fff",
           border: "none",
-          borderRadius: "8px",
-          cursor: "pointer"
+          borderRadius: "10px",
+          cursor: "pointer",
+          fontSize: "16px"
         }}
       >
-        Generate Certificate
+        🔍 Generate Certificate
       </button>
 
       <br /><br />
@@ -143,24 +321,27 @@ const Certificate = () => {
         ref={canvasRef}
         style={{
           width: "100%",
-          maxWidth: "900px",
-          border: "1px solid #ccc"
+          maxWidth: "1000px",
+          border: "2px solid #ddd",
+          borderRadius: "12px"
         }}
       />
 
-      {found && (
+      {student && (
         <>
           <br /><br />
 
           <button
             onClick={downloadCertificate}
             style={{
-              padding: "12px 25px",
+              padding: "14px 28px",
               background: "#28a745",
               color: "#fff",
               border: "none",
-              borderRadius: "8px",
-              cursor: "pointer"
+              borderRadius: "10px",
+              cursor: "pointer",
+              fontSize: "16px",
+              fontWeight: "bold"
             }}
           >
             📥 Download Certificate
