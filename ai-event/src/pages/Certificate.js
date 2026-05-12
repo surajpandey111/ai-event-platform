@@ -214,7 +214,7 @@ const Certificate = () => {
       department: "IT"
     },
     {
-      name: "Kritika Pandey",
+      name: "Kritika Pandey-",
       year: "4th Year",
       department: "IT"
     },
